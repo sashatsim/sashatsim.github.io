@@ -11,7 +11,7 @@ class Urls {
     }
 
     getGroupMembers(groupId) {
-        return `${this.url}/groups.getMembers?group_id=${groupId}&fields=photo_400_orig&${this.commonInfo}`
+        return `${this.url}/groups.getMembers?group_id=${groupId}&fields=photo_400_orig&filter=friends&${this.commonInfo}`
     }
 
     
