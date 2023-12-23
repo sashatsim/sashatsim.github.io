@@ -2,8 +2,8 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 const port = 3000;
-const accessToken = 'vk1.a.ZTb2Gb1B7i9y8t1rFIlx_lvzbfq-aF1i_LwaJb9VfEbHbGrvIPmj07DY7eEF4r1JQ643JedWKcJppBBQjVtd4q1-b9JHuDifussj65FKnjoPXhaluaqTckLtRfNqH8MtD-DYCAfN1l-Wj4fyYLOZhq9qDnwFGHDBNL9Jva2XQYjNfpoZGLt_UC9FyQguzE5vWVV8-6P0owTTB2p3C5tHfw'
-const groupId = 223900856
+const accessToken = 'vk1.a.f4iDPsaFg-l89KVZodeAHCWMR19a1nkCRyXhQjbfCkT6Iyz0vO2VSU9XO9JiIPCo7tH-Jziu8u18-1w1GT8Z9b7yHVjrpoU-9JzrW6v8n4X7hzMZclHp-rjTG2f6rH4u3xhQtom36esAdAVw8dq-446hoAGkibFeViY_1LEtab-Uz2zaQTZtzUB0iJRGy30NH_IDVgmRV99iyEQFewJxaw'
+const groupId = 223919067
 let UserInfo = null;
 let Members = null;
 

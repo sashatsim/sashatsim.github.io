@@ -12,6 +12,12 @@ body {
   padding-right: 28px;
 }
 
+.mt-3 {
+  margin-top: 15px; /* Измените значение по необходимости */
+  background: black;
+  color: white;
+}
+
   #root {
     display: flex;
     justify-content: center;

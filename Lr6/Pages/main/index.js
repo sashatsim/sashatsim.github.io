@@ -15,22 +15,25 @@ export class MainPage {
 
     getHTML() {
         return `
-            <div id="main-page" class="d-flex flex-wrap"></div>
+            <div id="main-page" class="d-flex flex-column">
+                <div id="product-cards-container" class="d-flex flex-wrap"></div>
+                <button id="refresh-button" class="refresh-button mt-3">Вернуть все карточки</button>
+            </div>
         `;
     }
 
     renderData(items) {
-        if (this.productCardsContainer) {
-            this.productCardsContainer.innerHTML = '';
-        } else {
-            this.productCardsContainer = document.createElement('div');
-            this.productCardsContainer.id = 'product-cards-container';
-            this.productCardsContainer.classList.add('d-flex', 'flex-wrap');
-            this.pageRoot.appendChild(this.productCardsContainer);
+        const productCardsContainer = document.getElementById('product-cards-container');
+    
+        if (!productCardsContainer) {
+            console.error("Product cards container not found.");
+            return;
         }
-
+    
+        productCardsContainer.innerHTML = '';
+    
         items.forEach((item) => {
-            const productCard = new ProductCardComponent(this.productCardsContainer);
+            const productCard = new ProductCardComponent(productCardsContainer);
             productCard.render(item, this.clickCard.bind(this));
         });
     }
@@ -55,7 +58,12 @@ export class MainPage {
         this.parent.innerHTML = '';
         const html = this.getHTML();
         this.parent.insertAdjacentHTML('beforeend', html);
-
+    
         this.getData();
+    
+        const refreshButton = document.getElementById('refresh-button');
+        refreshButton.addEventListener('click', () => {
+            this.updateDataWithGroupId();
+        });
     }
 }
