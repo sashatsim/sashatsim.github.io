@@ -5,6 +5,7 @@ export class ProductComponent {
 
     getHTML(data) {
         console.log("User Status:", data.status);
+        const onlineStatus = data.online ? 'В сети' : 'Offline';
         return `
             <div class="card mb-3" style="width: 900px;">
                 <div class="row g-0">
@@ -14,7 +15,8 @@ export class ProductComponent {
                     <div class="col-md-8" style="background-color: #1d1c1b;">
                         <div class="card-body">
                             <h5 class="card-title">${data.first_name} ${data.last_name}</h5>
-                            <p class="card-text">${data.status || 'Статус отсутствует'}</p>
+                            <p class="card-text" style="font-size: 15px; margin-top: -14px" >${onlineStatus}</p>
+                            <p class="card-text">${data.status || 'Статус отсутствует'}</p>        
                         </div>
                     </div>
                 </div>
